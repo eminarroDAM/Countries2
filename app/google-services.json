@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "132624976591",
+    "firebase_url": "https://countries2-a5d3e-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "countries2-a5d3e",
+    "storage_bucket": "countries2-a5d3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132624976591:android:6ef9a78793c7936a5305ba",
+        "android_client_info": {
+          "package_name": "org.ecaib.countries2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132624976591-ocraifuph7d7coj23u4q3454ga5a0p0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8EAU_ht0n92vgNGIKh_AYZ8mekrLoUG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132624976591-ocraifuph7d7coj23u4q3454ga5a0p0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
