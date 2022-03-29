@@ -6,7 +6,7 @@
     tools:context=".ui.mnemotecniques.MnemotecniquesFragment">
 
     <ListView
-        android:id="@+id/lvIncidencies"
+        android:id="@+id/lvMnemotecniques"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </FrameLayout>

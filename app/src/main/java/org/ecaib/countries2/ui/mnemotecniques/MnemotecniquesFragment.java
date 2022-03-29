@@ -48,15 +48,32 @@ public class MnemotecniquesFragment extends Fragment {
         shared_model.getUser().observe(getViewLifecycleOwner(), user -> {
             Log.e("UID", String.valueOf(users.child(user.getUid())));
             DatabaseReference uid = users.child(user.getUid());
-            DatabaseReference incidencies = uid.child("mnemotecniques");
+            DatabaseReference mnemotecniques = uid.child("mnemotecniques");
+
+            // --Hardcoded listview entries
+            Mnemotecnique mnemotecnique1 = new Mnemotecnique();
+            mnemotecnique1.setTitle("Cabo Verde");
+            mnemotecnique1.setText("Desde el Cabo Verde se ve una bonita playa: Praia");
+            DatabaseReference reference = mnemotecniques.push();
+
+            Mnemotecnique mnemotecnique2 = new Mnemotecnique();
+            mnemotecnique2.setTitle("Eritrea");
+            mnemotecnique2.setText("La Eritrosis me dio Asma: Asmana");
+            DatabaseReference reference2 = mnemotecniques.push();
+
+
+            reference.setValue(mnemotecnique1);
+            reference2.setValue(mnemotecnique2);
+
+            // --Until here
 
 
 
 
 
             FirebaseListOptions<Mnemotecnique> options = new FirebaseListOptions.Builder<Mnemotecnique>()
-                    .setQuery(incidencies, Mnemotecnique.class)
-                    .setLayout(R.layout.incidencia)
+                    .setQuery(mnemotecniques, Mnemotecnique.class)
+                    .setLayout(R.layout.mnemotecnique)
                     .setLifecycleOwner(this)
                     .build();
 
@@ -64,15 +81,15 @@ public class MnemotecniquesFragment extends Fragment {
             FirebaseListAdapter<Mnemotecnique> adapter = new FirebaseListAdapter<Mnemotecnique>(options) {
                 @Override
                 protected void populateView(View v, Mnemotecnique model, int position) {
-                    TextView txtDescripcio = v.findViewById(R.id.txtDescripcio);
-                    TextView txtAdreca = v.findViewById(R.id.txtAdreca);
+                    TextView txtTitle = v.findViewById(R.id.txtTitle);
+                    TextView txtText = v.findViewById(R.id.txtText);
 
-                    txtDescripcio.setText(model.getTitle());
-                    txtAdreca.setText(model.getText());
+                    txtTitle.setText(model.getTitle());
+                    txtText.setText(model.getText());
                 }
             };
 
-            ListView lvIncidencies = view.findViewById(R.id.lvIncidencies);
+            ListView lvIncidencies = view.findViewById(R.id.lvMnemotecniques);
             lvIncidencies.setAdapter(adapter);
         });
 
